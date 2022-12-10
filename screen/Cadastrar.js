@@ -1,4 +1,6 @@
-import * as React from 'react';
+//import * as React from 'react';
+import React, {useState, useEffect} from 'react';
+
 import { View, Text } from 'react-native';
 
 
@@ -8,6 +10,15 @@ import {TextInput} from 'react-native';
 import { StyleSheet} from 'react-native';
 
 export default function CadastrarScreen({navigation}) {
+
+ // const [contador, setContador] = useState(0);
+ // const [nome, setNome] = useState(0);
+
+
+  /*useEffect(()=>{
+    setNome(nome);
+    },[])*/
+
     return (
   <View style={styles.container}>
       <View style={{marginTop:30, width:200}}>
@@ -21,10 +32,12 @@ export default function CadastrarScreen({navigation}) {
         <View style={{paddingTop:20}}>
            <Button
               title="Salvar"
-              //onPress={ ()=> navigation.navigate('Login')}
+             // onPress={() => navigation.navigate('Login')}
+             // onPress={()=> setContador(contador + 1)}
               //style={{paddingTop:20}}
               
               />  
+           
         </View>
 
       </View>

@@ -7,6 +7,11 @@ import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LoginScreen from './screen/Login';
 import CadastrarScreen from './screen/Cadastrar';
+import ListarScreen from './screen/Listar';
+import InserirScreen from './screen/Inserir';
+import AlterarScreen from './screen/Alterar';
+
+
 
 
 const Stack = createNativeStackNavigator();
@@ -16,7 +21,10 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Listar" component={ListarScreen} options={{headerShown:false}} />
         <Stack.Screen name="Cadastrar" component={CadastrarScreen} />
+        <Stack.Screen name="Inserir" component={InserirScreen} />
+        <Stack.Screen name="Alterar" component={AlterarScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

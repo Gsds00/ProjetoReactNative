@@ -1,3 +1,4 @@
+//import React, {userState} from 'react';
 import * as React from 'react';
 import { View, Text } from 'react-native';
 
@@ -10,6 +11,10 @@ import { StyleSheet} from 'react-native';
 
 
 export default function LoginScreen({navigation}) {
+
+  
+
+
   return (
 
 <View style={styles.container}>
@@ -30,7 +35,9 @@ export default function LoginScreen({navigation}) {
     </View>
     <View style={{marginTop:30, width:200}}>
           
-          <Button title="Login"/>
+          <Button title="Login"
+             onPress={ ()=> navigation.navigate('Listar')}
+          />
 
         <View style={{marginTop:20}}>
           <Button title="Cadastre-se"
