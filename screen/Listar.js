@@ -5,13 +5,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import axios from 'axios';
 import { ListItem, Avatar, Button, Header } from 'react-native-elements'; 
 import { ScrollView } from 'react-native-gesture-handler';
-
+import { useIsFocused } from '@react-navigation/native';
 
 
 export default function ListaScreen({route,navigation}){
 
       const [list,setlist] = useState([]);
- 
+      const refresh = useIsFocused();
         useEffect(()=>{
             function consultarDados() {
                 axios.get('http://professornilson.com/testeservico/clientes')
@@ -23,11 +23,11 @@ export default function ListaScreen({route,navigation}){
                });
             }
              consultarDados();
-            },[])
+            },[refresh])
 
   return(
      <View>
-       
+        <ScrollView>
        <Header
            
             centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
@@ -60,7 +60,7 @@ export default function ListaScreen({route,navigation}){
       </ListItem>
     ))
   }
-
+           </ScrollView>
      </View>
 
   )

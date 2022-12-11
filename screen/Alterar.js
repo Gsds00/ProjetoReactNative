@@ -57,7 +57,7 @@ export default function AlterarScreen({ route, navigation }) {
 
     function alterarDados(){
 
-              axios.put('http://professornilson.com/testeservico/clientes/'+getId, {
+            axios.put('http://professornilson.com/testeservico/clientes/'+getId, {
                  nome: getNome,
                  telefone: getTelefone,
                  cpf: getCpf
@@ -67,12 +67,35 @@ export default function AlterarScreen({ route, navigation }) {
             
                  });}
 
+    function excluirDados() {
 
-
-   
+            axios.delete('http://professornilson.com/testeservico/clientes/' + getId).then(
+               function (response) {   
+                 setNome(null);
+                  setCpf(null);
+                   setTelefone(null);
+                    setId(null);    
+                  }).catch(function (error) {
+                         console.log(error);
+                    
+                });
+            }
 
     return (
-        <View style={styles.container}>
+        <View style={{ alignItems:'center'}}>
+                
+                <Header
+           
+           
+             leftComponent={<Button
+                   title="<=="
+                    onPress={() => navigation.navigate('Listar')}
+
+             />}
+             centerComponent={{ text: 'Alterar Dados.', style: { color: '#fff' } }} 
+
+/>
+
 
             <Text>Nome:</Text>
             <TextInput style={{ height: 40, backgroundColor: 'white', width: 300, borderWidth: 1 }}
@@ -101,11 +124,11 @@ export default function AlterarScreen({ route, navigation }) {
 
             ></Button>
             <Button title="Excluir"
-            
-            onPress={() => alterarDados()}
+             style={{paddingTop:20}}
+            onPress={() => excluirDados()}
 
         ></Button>
-        </View>
+        </View>    
     )
 }
 const styles = StyleSheet.create({

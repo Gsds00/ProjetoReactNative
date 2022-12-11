@@ -43,7 +43,20 @@ export default function ListaScreen({ route, navigation }) {
    
 
     return (
-        <View style={styles.container}>
+        <View style={{alignItems:'center'}}>
+                     
+                     <Header
+           
+           
+           leftComponent={<Button
+                 title="<=="
+                  onPress={() => navigation.navigate('Listar')}
+
+           />}
+           centerComponent={{ text: 'Alterar Dados.', style: { color: '#fff' } }} 
+
+/>
+
 
             <Text>Nome:</Text>
             <TextInput style={{ height: 40, backgroundColor: 'white', width: 300, borderWidth: 1 }}

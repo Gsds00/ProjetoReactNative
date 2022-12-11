@@ -20,11 +20,11 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} options={{headerShown:false}}/>
         <Stack.Screen name="Listar" component={ListarScreen} options={{headerShown:false}} />
-        <Stack.Screen name="Cadastrar" component={CadastrarScreen} />
-        <Stack.Screen name="Inserir" component={InserirScreen} />
-        <Stack.Screen name="Alterar" component={AlterarScreen} />
+        <Stack.Screen name="Cadastrar" component={CadastrarScreen} options={{headerShown:false}}/>
+        <Stack.Screen name="Inserir" component={InserirScreen} options={{headerShown:false}}/>
+        <Stack.Screen name="Alterar" component={AlterarScreen} options={{headerShown:false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
