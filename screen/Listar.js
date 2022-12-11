@@ -54,8 +54,8 @@ export default function ListaScreen({route,navigation}){
         <Avatar source={{uri: "https://cdn-icons-png.flaticon.com/512/1117/1117462.png"}} />
         <ListItem.Content>
           <ListItem.Title>{linha.nome}</ListItem.Title>
-          <ListItem.Subtitle>{linha.email}</ListItem.Subtitle>
           <ListItem.Subtitle>{linha.telefone}</ListItem.Subtitle>
+          <ListItem.Subtitle>{linha.email}</ListItem.Subtitle>
         </ListItem.Content>
       </ListItem>
     ))

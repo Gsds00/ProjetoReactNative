@@ -14,7 +14,8 @@ export default function AlterarScreen({ route, navigation }) {
     const [getNome, setNome] = useState();
     const [getTelefone, setTelefone] = useState();
     const [getCpf, setCpf] = useState();
-    
+    const [getId, setId] = useState();
+
 
     useEffect(() =>{
 
@@ -22,17 +23,18 @@ export default function AlterarScreen({ route, navigation }) {
          const { nome } = route.params ;
          const { cpf } = route.params ;
          const { telefone} = route.params ;
-         
+         const { id } = route.params;
 
      
          setNome(nome);
          setCpf(cpf);
          setTelefone(telefone);
+         setId(id);
          
 
         }
  
-     })
+     }, [])
     
 
     /*async function inserirDados() {
@@ -53,17 +55,17 @@ export default function AlterarScreen({ route, navigation }) {
         }*/
 
 
-        function alterarDados(){
+    function alterarDados(){
 
-            axios.put('http://professornilson.com/testeservico/clientes/'+getId, {
-            nome: getNome,
-            telefone: getTelefone,
-            cpf: getCpf
-            }).then(function (response) {
-            console.log(response);}).catch(function (error) {
-            console.log(error);
+              axios.put('http://professornilson.com/testeservico/clientes/'+getId, {
+                 nome: getNome,
+                 telefone: getTelefone,
+                 cpf: getCpf
+                 }).then(function (response) {
+                 console.log(response);}).catch(function (error) {
+                 console.log(error);
             
-            });}
+                 });}
 
 
 
@@ -98,6 +100,11 @@ export default function AlterarScreen({ route, navigation }) {
                 onPress={() => alterarDados()}
 
             ></Button>
+            <Button title="Excluir"
+            
+            onPress={() => alterarDados()}
+
+        ></Button>
         </View>
     )
 }
