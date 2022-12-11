@@ -32,7 +32,7 @@ export default function CadastrarScreen({navigation}) {
         <View style={{paddingTop:20}}>
            <Button
               title="Salvar"
-             // onPress={() => navigation.navigate('Login')}
+              onPress={() => navigation.navigate('Login')}
              // onPress={()=> setContador(contador + 1)}
               //style={{paddingTop:20}}
               
