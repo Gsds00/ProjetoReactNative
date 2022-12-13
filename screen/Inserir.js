@@ -12,8 +12,8 @@ import { StyleSheet } from 'react-native';
 
 export default function ListaScreen({ route, navigation }) {
 
-    const [getNome, setNome] = useState();
-    const [getTelefone, setTelefone] = useState();
+    const [getProduto, setProduto] = useState();
+    const [getPreco, setPreco] = useState();
     const [getCpf, setCpf] = useState();
 
 
@@ -24,8 +24,8 @@ export default function ListaScreen({ route, navigation }) {
      await axios.post('http://professornilson.com/testeservico/clientes'
                 , {
 
-                    nome: getNome,
-                    telefone: getTelefone,
+                    nome: getProduto,
+                    telefone: getPreco,
                     cpf: getCpf
                 }).then(function (response) {
                     console.log(response);
@@ -58,21 +58,21 @@ export default function ListaScreen({ route, navigation }) {
 />
 
 
-            <Text>Nome:</Text>
+            <Text>Produto:</Text>
             <TextInput style={{ height: 40, backgroundColor: 'white', width: 300, borderWidth: 1 }}
-                onChangeText={text => setNome(text)}
-                value={getNome}
+                onChangeText={text => setProduto(text)}
+                value={getProduto}
             />
 
 
-            <Text>Telefone:</Text>
+            <Text>Capaciadade:</Text>
             <TextInput style={{ height: 40, backgroundColor: 'white', width: 300, borderWidth: 1 }}
-                onChangeText={text => setTelefone(text)}
-                value={getTelefone}
+                onChangeText={text => setPreco(text)}
+                value={getPreco}
             />
 
 
-            <Text>Cpf:</Text>
+            <Text>Preço(R$):</Text>
             <TextInput style={{ height: 40, backgroundColor: 'white', width: 300, borderWidth: 1 }}
                 onChangeText={text => setCpf(text)}
                 value={getCpf}

@@ -6,7 +6,8 @@ import axios from 'axios';
 import { ListItem, Avatar, Button, Header } from 'react-native-elements'; 
 import { ScrollView } from 'react-native-gesture-handler';
 import { useIsFocused } from '@react-navigation/native';
-
+import { Card, Icon, Text } from 'react-native-elements';
+import { color } from 'react-native-elements/dist/helpers';
 
 export default function ListaScreen({route,navigation}){
 
@@ -30,11 +31,11 @@ export default function ListaScreen({route,navigation}){
         <ScrollView>
        <Header
            
-            centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
+            centerComponent={{ text: 'Lista de produto', style:  { color: '#fff' }}}
              rightComponent={<Button
                    title="+"
                     onPress={() => navigation.navigate('Inserir')}
-
+                
              />}
                   
 
@@ -51,12 +52,25 @@ export default function ListaScreen({route,navigation}){
         id:linha.id
 
      })}>
-        <Avatar source={{uri: "https://cdn-icons-png.flaticon.com/512/1117/1117462.png"}} />
-        <ListItem.Content>
-          <ListItem.Title>{linha.nome}</ListItem.Title>
-          <ListItem.Subtitle>{linha.telefone}</ListItem.Subtitle>
-          <ListItem.Subtitle>{linha.email}</ListItem.Subtitle>
-        </ListItem.Content>
+         <Card>
+    
+         <Card.Title>Produto</Card.Title>
+         <Card.Divider/>
+             <Card.Image
+             source={{
+              uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0pdWnd_KrvCX3hWHS6JsGp12lM65-G0iAtg&usqp=CAU',}}>
+               <Text style={{marginBottom: 10}}>
+        .............................................................................................................................
+              </Text>
+                  
+              </Card.Image>
+              
+              <ListItem.Content>
+                   <ListItem.Title>produto: {linha.nome}</ListItem.Title>
+                    <ListItem.Subtitle>Capacidade: {linha.telefone}</ListItem.Subtitle>
+               <ListItem.Subtitle>Preço: {linha.email}</ListItem.Subtitle>
+          </ListItem.Content>
+         </Card>
       </ListItem>
     ))
   }

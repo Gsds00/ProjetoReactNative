@@ -97,21 +97,21 @@ export default function AlterarScreen({ route, navigation }) {
 />
 
 
-            <Text>Nome:</Text>
+            <Text>Produto:</Text>
             <TextInput style={{ height: 40, backgroundColor: 'white', width: 300, borderWidth: 1 }}
                 onChangeText={text => setNome(text)}
                 value={getNome}
             />
 
 
-            <Text>Telefone:</Text>
+            <Text>Capaciadade:</Text>
             <TextInput style={{ height: 40, backgroundColor: 'white', width: 300, borderWidth: 1 }}
                 onChangeText={text => setTelefone(text)}
                 value={getTelefone}
             />
 
 
-            <Text>Cpf:</Text>
+            <Text>Preço:</Text>
             <TextInput style={{ height: 40, backgroundColor: 'white', width: 300, borderWidth: 1 }}
                 onChangeText={text => setCpf(text)}
                 value={getCpf}

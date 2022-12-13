@@ -21,7 +21,7 @@ export default function LoginScreen({navigation}) {
     <View style={{alignItems: 'center'}}>
 
        <Avatar
-         size="large"rounded source={{ uri:'https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur-gris.png',}}/>
+         size="large"rounded source={{ uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOcCR9Qg_yFyOD4CA6ITWOGJM02y9JqwwLLA&usqp=CAU',}}/>
 
     </View>
     <View style={{marginTop:30, width:200,}}>
